@@ -1,0 +1,26 @@
+version :  '3.1'
+
+
+services:
+
+  postgres:
+    image:  postgres:10
+    container_name: postgres_container
+    ports:
+      - "5432:5432"
+    environment:
+        POSTGRES_USER: Larous
+        POSTGRES_PASSWORD: 1219FJ1320FJKDSFJ120-9RU0I123FFG9032FJ1I3FJ
+        POSTGRES_DB: SpaceChat
+    volumes:
+      - postgres_data:/var/lib/postgresql/postgres_data
+  
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+
+volumes:
+  postgres_data:
